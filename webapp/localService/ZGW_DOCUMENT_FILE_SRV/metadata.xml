@@ -1,0 +1,34 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZGW_DOCUMENT_FILE_SRV_02" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="DocObjFile" sap:content-version="1">
+				<Key><PropertyRef Name="Objecttype"/><PropertyRef Name="Objectkey"/><PropertyRef Name="Documentnumber"/><PropertyRef Name="Documenttype"/><PropertyRef Name="FileId"/></Key><Property Name="Objecttype" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Object" sap:creatable="false"
+					sap:sortable="false"/><Property Name="Objectkey" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Object key"
+					sap:creatable="false" sap:sortable="false"/><Property Name="Documentnumber" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Document"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Documenttype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Document Type"
+					sap:creatable="false" sap:sortable="false"/><Property Name="FileId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Log. document"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="MIME type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Documentpart" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Document part"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Documentversion" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Doc. version"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Deletevalue" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Deletion Ind." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Original" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="DocumentFile" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="FileId"/><PropertyRef Name="Documentnumber"/><PropertyRef Name="Documenttype"/></Key><Property Name="FileId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Log. document"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Documentnumber" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Document"
+					sap:creatable="false" sap:updatable="false" sap:filterable="false"/><Property Name="Documenttype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Document Type"
+					sap:updatable="false" sap:filterable="false"/><Property Name="FileName" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Original" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objecttype" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Object" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objectkey" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:label="Object key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Documentpart" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Document part" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><Property Name="Documentversion" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Doc. version" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><Property Name="Binfile" Type="Edm.Binary" sap:unicode="false" sap:label="Binary String" sap:updatable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" MaxLength="128" sap:unicode="false" sap:label="MIME type" sap:updatable="false"
+					sap:filterable="false"/><Property Name="Deletevalue" Type="Edm.Boolean" sap:unicode="false" sap:label="Deletion Ind." sap:updatable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZGW_DOCUMENT_FILE_SRV_02_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="DocObjFileSet" EntityType="ZGW_DOCUMENT_FILE_SRV_02.DocObjFile" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="DocumentFileSet" EntityType="ZGW_DOCUMENT_FILE_SRV_02.DocumentFile" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZGW_DOCUMENT_FILE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZGW_DOCUMENT_FILE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

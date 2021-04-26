@@ -1,0 +1,16 @@
+/* Activate scroll on picture uploader */
+.mjzsoftUploadCollection ul {
+	max-height: 16rem;
+    overflow-y: scroll;
+}
+
+/* Show file names in multi lines*/
+.mjzsoftUploadCollection ul li a:first-of-type {
+	white-space: normal !important;
+	word-break: break-all;
+}
+
+.mjzsoftVBoxItem {
+	border-bottom: 1px solid gray;
+	padding: 8px 16px;
+}
